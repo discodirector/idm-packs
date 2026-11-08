@@ -1,0 +1,19 @@
+{
+  "name": "idm-packs",
+  "private": true,
+  "description": "The IDM sound engine and station style packs: what a station's sound is written, checked and tested with.",
+  "workspaces": [
+    "packages/core",
+    "packages/synth",
+    "web"
+  ],
+  "scripts": {
+    "test": "npm test -w packages/core -w packages/synth",
+    "typecheck": "npm run typecheck -w packages/core -w packages/synth && tsc --noEmit -p web",
+    "check-pack": "node web/scripts/station-check-pack.mjs",
+    "ab": "node web/scripts/station-ab.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0"
+  }
+}
